@@ -13,7 +13,7 @@ const NETWORK_ID = '1001'
 const URL = 'https://api.baobab.klaytn.net:8651'
 
 // Paste your `Private key` that has enough KLAY to truffle.js
-const PRIVATE_KEY = '0x3de0c90ce7e440f19eff6439390c29389f611725422b79c95f9f48c856b58277'
+const PRIVATE_KEY = '0x6f2ff19cde8fa14ce447b916211e7de7a0d7ca16876e2915e4fc89acf7c13931'//'0x3de0c90ce7e440f19eff6439390c29389f611725422b79c95f9f48c856b58277'
 
 module.exports = {
   networks: {
@@ -25,10 +25,10 @@ module.exports = {
     },
   },
 
-  // Specify the version of compiler, we use 0.4.24
+  // Specify the version of compiler, we use 0.5.6
   compilers: {
     solc: {
-      version: '0.4.24',
+      version: '0.5.6',
     },
   },
 }
