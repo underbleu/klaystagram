@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.6;
 
 import "./ERC721/ERC721.sol";
 import "./ERC721/ERC721Enumerable.sol";
@@ -22,7 +22,7 @@ contract Klaystagram is ERC721, ERC721Enumerable {
   /**
    * @notice _mint() is from ERC721.sol
    */
-    function uploadPhoto(bytes photo, string title, string location, string description) public {
+    function uploadPhoto(bytes memory photo, string memory title, string memory location, string memory description) public {
         uint256 tokenId = totalSupply() + 1;
 
         _mint(msg.sender, tokenId);
@@ -53,7 +53,7 @@ contract Klaystagram is ERC721, ERC721Enumerable {
         safeTransferFrom(msg.sender, to, tokenId);
         uint ownerHistoryLength = _photoList[tokenId].ownerHistory.length;
         return (
-            _photoList[tokenId].tokenId, 
+            _photoList[tokenId].tokenId,
             //original owner
             _photoList[tokenId].ownerHistory[0],
             //previous owner, length cannot be less than 2
@@ -76,15 +76,15 @@ contract Klaystagram is ERC721, ERC721Enumerable {
         return totalSupply();
     }
 
-    function getPhoto (uint tokenId) public view 
-    returns(uint256, address[], bytes, string, string, string, uint256) {
+    function getPhoto (uint tokenId) public view
+    returns(uint256, address[] memory, bytes memory, string memory, string memory, string memory, uint256) {
         require(_photoList[tokenId].tokenId != 0, "Photo does not exist");
         return (
-            _photoList[tokenId].tokenId, 
-            _photoList[tokenId].ownerHistory, 
-            _photoList[tokenId].photo, 
-            _photoList[tokenId].title, 
-            _photoList[tokenId].location, 
+            _photoList[tokenId].tokenId,
+            _photoList[tokenId].ownerHistory,
+            _photoList[tokenId].photo,
+            _photoList[tokenId].title,
+            _photoList[tokenId].location,
             _photoList[tokenId].description,
             _photoList[tokenId].timestamp);
     }

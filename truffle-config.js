@@ -25,10 +25,10 @@ module.exports = {
     },
   },
 
-  // Specify the version of compiler, we use 0.4.24
+  // Specify the version of compiler, we use 0.5.6
   compilers: {
     solc: {
-      version: '0.4.24',
+      version: '0.5.6',
     },
   },
 }
