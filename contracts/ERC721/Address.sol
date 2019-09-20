@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.6;
 
 /**
  * @dev Collection of functions related to the address type,
