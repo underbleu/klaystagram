@@ -52,7 +52,7 @@ class Feed extends Component {
             timestamp,
           }) => {
             const originalOwner = ownerHistory[0]
-            const currentOwner = last(ownerHistory).toLowerCase()
+            const currentOwner = last(ownerHistory)
             const imageUrl = drawImageFromBytes(data)
             const issueDate = moment(timestamp * 1000).fromNow()
             return (
