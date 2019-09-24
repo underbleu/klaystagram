@@ -1,4 +1,4 @@
-import { cav } from 'klaytn/caver'
+import caver from 'klaytn/caver'
 import {
   LOGIN,
   LOGOUT,
@@ -7,8 +7,8 @@ import {
 } from './actionTypes'
 
 export const integrateWallet = (privateKey) => (dispatch) => {
-  const walletInstance = cav.klay.accounts.privateKeyToAccount(privateKey)
-  cav.klay.accounts.wallet.add(walletInstance)
+  const walletInstance = caver.klay.accounts.privateKeyToAccount(privateKey)
+  caver.klay.accounts.wallet.add(walletInstance)
   sessionStorage.setItem('walletInstance', JSON.stringify(walletInstance))
   return dispatch({
     type: INTEGRATE_WALLET,
@@ -20,7 +20,7 @@ export const integrateWallet = (privateKey) => (dispatch) => {
 }
 
 export const removeWallet = () => (dispatch) => {
-  cav.klay.accounts.wallet.clear()
+  caver.klay.accounts.wallet.clear()
   sessionStorage.removeItem('walletInstance')
   return dispatch({
     type: REMOVE_WALLET,

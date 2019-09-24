@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { cav } from 'klaytn/caver'
+import caver from 'klaytn/caver'
 import { KLAY_FAUCET } from 'constants/url'
 import Input from 'components/Input'
 import './WalletInfo.scss'
@@ -15,9 +15,9 @@ class WalletInfo extends Component {
 
   getBalance = (address = this.props.address) => {
     if (!address) return
-    cav.klay.getBalance(address).then((balance) => {
+    caver.klay.getBalance(address).then((balance) => {
       this.setState({
-        balance: cav.utils.fromWei(balance, 'ether'),
+        balance: caver.utils.fromWei(balance, 'ether'),
       })
     })
   }

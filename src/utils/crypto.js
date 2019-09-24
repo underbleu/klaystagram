@@ -1,6 +1,6 @@
-import { cav } from 'klaytn/caver'
+import caver from 'klaytn/caver'
 
-export const isValidAddress = (address) => cav.utils.isAddress(address)
+export const isValidAddress = (address) => caver.utils.isAddress(address)
 
 export const isValidPrivateKey = (privateKey) => {
   const washedPrivateKey = privateKey.slice(0, 2) === '0x'
@@ -14,6 +14,6 @@ export const isValidPrivateKey = (privateKey) => {
 }
 
 export const getWallet = () => {
-  if (!cav.klay.accounts.wallet.length) return null
-  return cav.klay.accounts.wallet[0]
+  if (!caver.klay.accounts.wallet.length) return null
+  return caver.klay.accounts.wallet[0]
 }

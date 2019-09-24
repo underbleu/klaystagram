@@ -5,10 +5,10 @@
  */
 import Caver from 'caver-js'
 
-export const config = {
-  rpcURL: 'https://api.baobab.klaytn.net:8651',
-}
+const BAOBAB_TESTNET_RPC_URL = 'https://api.baobab.klaytn.net:8651/'
 
-export const cav = new Caver(config.rpcURL)
+const rpcURL = BAOBAB_TESTNET_RPC_URL
 
-export default cav
+const caver = new Caver(rpcURL)
+
+export default caver

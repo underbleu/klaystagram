@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { cav } from 'klaytn/caver'
+import caver from 'klaytn/caver'
 import Input from 'components/Input'
 import Button from 'components/Button'
 
@@ -11,7 +11,7 @@ class SignupForm extends Component {
   }
 
   generatePrivateKey = () => {
-    const { privateKey } = cav.klay.accounts.create()
+    const { privateKey } = caver.klay.accounts.create()
     this.setState({ privateKey })
   }
 
